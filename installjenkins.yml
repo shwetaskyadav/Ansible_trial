@@ -1,5 +1,5 @@
 - name: Java and jenkins installation
-  hosts: My_nodes
+  hosts: 100.126.22.67
   tasks:
     - name: Update APT package manager repositories cache
       become: true
