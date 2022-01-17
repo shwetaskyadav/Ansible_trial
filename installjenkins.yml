@@ -1,11 +1,9 @@
 - name: Java and jenkins installation
   hosts: 100.126.22.67
-  vars:
-    remote_user: "anthadm"
-    ansible_become_pass: "@nth05202!"
+  remote_user: anthadm
+  become: true
   tasks:
     - name: Update APT package manager repositories cache
-      become: true
       apt:
         update_cache: yes
 
