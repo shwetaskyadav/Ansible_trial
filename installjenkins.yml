@@ -1,10 +1,7 @@
 - name: Java and jenkins installation
   hosts: 100.126.22.67
   remote_user: anthadm
-  vars_prompt:
-    - name: "ansible_become_pass"
-      prompt: "Sudo password"
-      private: yes
+  ansible_become_pass: @nth05202!
   become: yes
   become_user: root
   tasks:
