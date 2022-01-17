@@ -1,8 +1,18 @@
 - name: Java and jenkins installation
   hosts: 100.126.22.67
+  vars_prompt: 
+  - name: "serveruser" 
+    prompt: "Enter your username" 
+    private: no 
+  - name: "serverpass" 
+    prompt: "Enter your password" 
+    private: yes
   tasks:
     - name: Update APT package manager repositories cache
       become: true
+      responses:
+        Username: "{{ serveruser }}"
+        Password: "{{ serverpass }}"
       apt:
         update_cache: yes
 
